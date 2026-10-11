@@ -23,7 +23,7 @@
 Leave a star if you like the project! ⭐️
 </h5>
 
-<h5 align="center"><mark>Shader supports Physics Mod (Distant Horizons support coming soon)</mark>
+<h5 align="center"><mark>For the latest stable build, visit the <a href="https://www.patreon.com/ThomasDeStrooper/posts/seus-ptgi-hrr-2-172063951">Latest Stable Build</a></mark></h5>
 
 # About
 
