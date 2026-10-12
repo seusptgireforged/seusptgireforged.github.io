@@ -124,48 +124,6 @@ This is intended to make the patching process predictable and prevent the patche
 
 ---
 
-# Feature Showcase
-
-This page showcases some of the visual changes and features currently included in **SEUS PTGI HRR 2.1 Reforged**.
-
-All images below are screenshots taken in-game and are intended to highlight the visual differences introduced by Reforged.
-
-## Comparison
-
-The screenshots below were taken using the **default shader settings**.
-
-The original **SEUS PTGI HRR 2.1** is shown on the left, while **SEUS PTGI HRR 2.1 Reforged** is shown on the right.
-
-These comparisons highlight some of the visual changes introduced by Reforged, including improvements to **reflections, lighting, clouds, and other visual effects**.
-
-<table>
-<tr>
-<th>SEUS PTGI HRR 2.1</th>
-<th>SEUS PTGI HRR 2.1 Reforged</th>
-</tr>
-
-<tr>
-<td>
-<img src="https://github.com/user-attachments/assets/824bf962-dd80-4a1e-9f44-6eb1ed995ba9" />
-</td>
-<td>
-<img src="https://github.com/user-attachments/assets/2368197f-a857-49d4-924c-7f89e76904cb" />
-</td>
-</tr>
-
-<tr>
-<td>
-<img src="https://github.com/user-attachments/assets/68af4811-99b2-455f-8245-6bff252b2386" />
-</td>
-<td>
-<img src="https://github.com/user-attachments/assets/64b3e821-2366-4260-ad10-cd05aff42c28" />
-</td>
-</tr>
-
-</table>
-
----
-
 # Requirements
 
 ## Minecraft
