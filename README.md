@@ -87,39 +87,6 @@ If all checks pass, the patcher can finish normally and the resulting files are 
 
 If any verification check fails, **nothing is written**. The patcher will stop instead of producing a potentially corrupted or incomplete shader pack.
 
-In short:
-
-```text
-SEUS PTGI HRR 2.1
-        |
-        v
-   SHA-256 check
-        |
-        v
-   Photon v1.3b
-        |
-        v
-   SHA-256 check
-        |
-        v
-      Patching
-        |
-        v
-  File checksums
- before and after
-        |
-        v
-   Verification
-        |
-   +----+----+
-   |         |
-  PASS      FAIL
-   |         |
-   v         v
-Output     Nothing
-written    written
-```
-
 This is intended to make the patching process predictable and prevent the patcher from silently producing an incorrect result.
 
 ---
