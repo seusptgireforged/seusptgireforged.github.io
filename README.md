@@ -14,7 +14,7 @@
   </a>
   <a href="https://github.com/ThomasDeStrooper/SEUS_PTGI_HRR_REFORGED/releases">
     <img src="https://img.shields.io/github/downloads/ThomasDeStrooper/SEUS_PTGI_HRR_REFORGED/total?style=flat-square&color=blue" alt="" />
-  <a href="https://github.com/sponsors/ThomasDeStrooper">
+  <a href="https://github.com/sponsors/seusptgireforged">
     <img src="https://img.shields.io/static/v1?label=Sponsor&style=flat-square&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86" alt="" />
   </a>
 </div>
