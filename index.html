@@ -47,7 +47,6 @@
             position: relative;
         }
 
-        /* Subtielere, gelaagde gloed achtergronden voor een strakke, gebalanceerde look */
         .ambient-radial-bg {
             position: fixed;
             top: 0;
@@ -101,7 +100,6 @@
             font-size: 14px;
         }
 
-        /* Scroll animatie utility klassen */
         .reveal-on-scroll {
             opacity: 0;
             transform: translateY(28px);
@@ -114,7 +112,6 @@
             transform: translateY(0);
         }
 
-        /* Stagger vertragingen voor cards */
         .delay-100 { transition-delay: 0.1s; }
         .delay-200 { transition-delay: 0.2s; }
         .delay-300 { transition-delay: 0.3s; }
@@ -137,13 +134,13 @@
 </head>
 <body class="min-h-screen flex flex-col antialiased selection:bg-blue-500 selection:text-white">
 
-    <!-- Subtiele omgevingsgloed achtergrond -->
     <div class="ambient-radial-bg"></div>
 
     <!-- Navigation Bar -->
     <header class="sticky top-0 z-50 w-full border-b border-white/[0.07] bg-[#08090d]/80 backdrop-blur-xl">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center group">
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="https://raw.githubusercontent.com/seusptgireforged/seusptgireforged.github.io/main/seusptgihrrreforged.png" alt="REFORGED Logo" class="w-8 h-8 rounded-lg shadow-md group-hover:scale-105 transition-transform" />
                 <span class="font-bold text-lg tracking-wider text-white group-hover:text-blue-400 transition-colors">REFORGED</span>
             </a>
 
@@ -225,19 +222,76 @@
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
                     <div class="inline-flex items-center gap-2 glass-pill px-3.5 py-1.5 rounded-full text-xs font-semibold text-blue-400 mb-6">
-                        <i class="fa-solid fa-sliders"></i>
-                        <span>Made to feel familiar. Built to go further.</span>
+                        <i class="fa-solid fa-sparkles"></i>
+                        <span>New &amp; Key Features</span>
                     </div>
                     <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
                         The SEUS atmosphere, refined.
                     </h2>
                     <p class="mt-4 text-dark-textMuted text-base sm:text-lg">
-                        Reforged keeps the original shader as its foundation while improving visual quality, performance, and customization.
+                        Reforged keeps the original shader as its foundation while bringing next-generation visual upgrades and performance controls.
                     </p>
                 </div>
 
+                <!-- Showcase Feature 1: Improved SSR -->
+                <div class="glass-card glass-card-hover p-8 md:p-10 mb-8 reveal-on-scroll">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-5 space-y-4">
+                            <div class="inline-flex items-center gap-2 glass-pill px-3 py-1 rounded-full text-xs text-blue-400 font-mono">
+                                <i class="fa-solid fa-water"></i>
+                                <span>Water &amp; Surfaces</span>
+                            </div>
+                            <h3 class="text-2xl sm:text-3xl font-bold text-white">Improved screen space reflections</h3>
+                            <p class="text-dark-textMuted text-sm sm:text-base leading-relaxed">
+                                Significantly upgraded screen space reflections designed to make water surfaces and wet blocks look remarkably clear, realistic, and lively.
+                            </p>
+                        </div>
+                        <div class="lg:col-span-7 rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
+                            <img width="1920" height="1080" alt="Improved screen space reflections" src="https://github.com/user-attachments/assets/7ffcd740-cb6f-4234-a460-aad1fdda4f78" class="w-full h-auto block group-hover:scale-105 transition-transform duration-700 ease-out" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Showcase Feature 2: Native emission -->
+                <div class="glass-card glass-card-hover p-8 md:p-10 mb-8 reveal-on-scroll delay-100">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-7 lg:order-1 order-2 rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
+                            <img width="1920" height="1080" alt="Native emission support for Glow Berries, Glow Lichen, Amethyst Buds and more" src="https://github.com/user-attachments/assets/e897d46a-4f64-461b-b1f5-1d04a25f00df" class="w-full h-auto block group-hover:scale-105 transition-transform duration-700 ease-out" />
+                        </div>
+                        <div class="lg:col-span-5 lg:order-2 order-1 space-y-4">
+                            <div class="inline-flex items-center gap-2 glass-pill px-3 py-1 rounded-full text-xs text-emerald-400 font-mono">
+                                <i class="fa-solid fa-lightbulb"></i>
+                                <span>Ray Traced Lighting</span>
+                            </div>
+                            <h3 class="text-2xl sm:text-3xl font-bold text-white">Native emission support for Glow Berries, Glow Lichen, Amethyst Buds and more</h3>
+                            <p class="text-dark-textMuted text-sm sm:text-base leading-relaxed">
+                                Full ray-traced lighting support built natively into blocks like Glow Berries, Lichen, and Amethyst Buds so they naturally cast real, glowing light onto nearby walls and floors.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Showcase Feature 3: Ray Traced player shadows -->
+                <div class="glass-card glass-card-hover p-8 md:p-10 mb-12 reveal-on-scroll delay-200">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-5 space-y-4">
+                            <div class="inline-flex items-center gap-2 glass-pill px-3 py-1 rounded-full text-xs text-amber-400 font-mono">
+                                <i class="fa-solid fa-user-shield"></i>
+                                <span>Dynamic Shadows</span>
+                            </div>
+                            <h3 class="text-2xl sm:text-3xl font-bold text-white">Ray Traced player shadows</h3>
+                            <p class="text-dark-textMuted text-sm sm:text-base leading-relaxed">
+                                Experience authentic, path-traced player shadows that dynamically cast across the environment whenever you stand in front of any light source.
+                            </p>
+                        </div>
+                        <div class="lg:col-span-7 rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
+                            <img width="1521" height="856" alt="Ray Traced player shadows" src="https://github.com/user-attachments/assets/68c263cf-8486-41f2-ab5c-1aa71d353ce8" class="w-full h-auto block group-hover:scale-105 transition-transform duration-700 ease-out" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secondary Features Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
-                    
                     <div class="glass-card glass-card-hover p-8 flex flex-col justify-between reveal-on-scroll">
                         <div>
                             <div class="feature-icon-box mb-6">
@@ -309,8 +363,8 @@
                             </p>
                         </div>
                     </div>
-
                 </div>
+
             </div>
         </section>
 
@@ -534,7 +588,8 @@
     <!-- Footer -->
     <footer class="border-t border-white/[0.07] py-8 text-xs text-dark-textMuted bg-[#08090d]">
         <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-3">
+                <img src="https://raw.githubusercontent.com/seusptgireforged/seusptgireforged.github.io/main/seusptgihrrreforged.png" alt="REFORGED Logo" class="w-6 h-6 rounded" />
                 <span class="font-bold text-white tracking-wider">REFORGED</span>
                 <span>© 2026 <strong>Thomas De Strooper</strong>. All rights reserved.</span>
             </div>
@@ -560,7 +615,7 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target); // Animatie eenmaal afspelen
+                        observer.unobserve(entry.target);
                     }
                 });
             }, observerOptions);
