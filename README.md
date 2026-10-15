@@ -77,15 +77,15 @@ A comparison chart between the two shaders. Please note that these benchmarks we
 
 # Features
 
-## Improved Screen Space Reflections
+### Improved screen space reflections
 
 <img width="1920" height="1080" alt="2026-10-15_13 32 21" src="https://github.com/user-attachments/assets/7ffcd740-cb6f-4234-a460-aad1fdda4f78" />
 
-## Colored Light
+### Native emission support for Glow Berries, Glow Lichen, Amethyst Buds and more
 
 <img width="1920" height="1080" alt="2026-10-15_12 58 27" src="https://github.com/user-attachments/assets/e897d46a-4f64-461b-b1f5-1d04a25f00df" />
 
-## Ray Traced player shadows
+### Ray Traced player shadows
 
 <img width="1521" height="856" alt="2026-10-09_19 38 40" src="https://github.com/user-attachments/assets/68c263cf-8486-41f2-ab5c-1aa71d353ce8" />
 
