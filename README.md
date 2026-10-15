@@ -31,7 +31,7 @@ Leave a star if you like the project! ⭐️
 
 SEUS PTGI HRR 2.1 Reforged is a community made edit of **Sonic Ether's SEUS PTGI HRR 2.1**, focused on improving image quality and performance, adding more configuration options, fixing visual issues, Distant Horizon support and bringing in selected features from **Photon** alongside original features developed specifically for Reforged.
 
-Reforged is built around the original SEUS PTGI HRR 2.1 shader. It is not a shader made from scratch. The original SEUS shader provides the foundation, with selected Photon features and my own features and improvements added on top of it. The original SEUS and Photon shader files are not redistributed by the patcher. You provide the required files yourself, and the patcher only works with the copies on your system.
+Reforged is built around the original SEUS PTGI HRR 2.1 shader. It is not a shader made from scratch. The original SEUS shader provides the foundation, with selected Photon features and my own features and improvements added on top of it. **The original SEUS and Photon shader files are not redistributed by the patcher. You provide the required files yourself, and the patcher only works with the copies on your system.**
 
 > [!NOTE]
 > SEUS PTGI HRR 2.1 Reforged is an unofficial community edit. It is not affiliated with or endorsed by Sonic Ether.
