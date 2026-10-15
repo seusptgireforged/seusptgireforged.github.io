@@ -29,7 +29,7 @@ Leave a star if you like the project! ⭐️
 
 SEUS PTGI HRR 2.1 Reforged is a community made edit of **Sonic Ether's SEUS PTGI HRR 2.1**, focused on improving image quality and performance, adding more configuration options, fixing visual issues, Distant Horizon support and bringing in selected features from **Photon** alongside original features developed specifically for Reforged.
 
-Reforged is built around the original SEUS PTGI HRR 2.1 shader. It is not a shader made from scratch. The original SEUS shader provides the foundation, with selected Photon features and my own features and improvements added on top of it.
+Reforged is built around the original SEUS PTGI HRR 2.1 shader. It is not a shader made from scratch. The original SEUS shader provides the foundation, with selected Photon features and my own features and improvements added on top of it. The original SEUS and Photon shader files are not redistributed by the patcher. You provide the required files yourself, and the patcher only works with the copies on your system.
 
 > [!NOTE]
 > SEUS PTGI HRR 2.1 Reforged is an unofficial community edit. It is not affiliated with or endorsed by Sonic Ether.
@@ -41,11 +41,6 @@ This project is made for the Minecraft shader community and is not intended to g
 SEUS PTGI HRR 2.1 remains the work of **Sonic Ether**. Photon remains the work of its respective developers.
 
 ---
-
-# Performance
-A comparison chart between the two shaders. Please note that these benchmarks were captured in a random location, so the FPS values serve as an example.
-
-![Frame Rendering Time Comparison](./frame-rendering-comparison.svg)
 
 # Installation
 You can choose from two installation methods:
@@ -73,21 +68,26 @@ You can choose from two installation methods:
 9. The patcher will then ask whether you want to automatically install the generated shader into your shaderpacks folder. Enter **Y** for Yes or **N** for No. You can also simply **press Enter** to use the default option and automatically add the generated shader to your shaderpacks folder.
 10. If the patcher cannot find one or both shader files, make sure the filenames are correct and place them somewhere the patcher can find them, then run **`Apply Patch.bat`** again.
 
-# Integrity and Verification
+---
 
-The patcher performs several checks before and during the patching process to make sure the shader files are not modified or corrupted.
+# Performance
+A comparison chart between the two shaders. Please note that these benchmarks were captured in a random location, so the FPS values serve as an example.
 
-The clean **SEUS PTGI HRR 2.1** pack, **Bliss v2.1.2** and **Photon v1.3b** are both verified using **SHA-256** before patching begins.
+![Frame Rendering Time Comparison](./frame-rendering-comparison.svg)
 
-The original SEUS and Photon shader files are **not redistributed by the patcher**. You provide the required files yourself, and the patcher only works with the copies on your system.
+# Features
 
-Every file that is patched is also checksummed both **before and after patching**. This allows the patcher to verify that the expected changes were made and that the resulting file is correct.
+## Improved Screen Space Reflections
 
-If all checks pass, the patcher can finish normally and the resulting files are verified **byte-for-byte** against what the patcher expects.
+<img width="1920" height="1080" alt="2026-10-15_13 32 21" src="https://github.com/user-attachments/assets/7ffcd740-cb6f-4234-a460-aad1fdda4f78" />
 
-If any verification check fails, **nothing is written**. The patcher will stop instead of producing a potentially corrupted or incomplete shader pack.
+## Colored Light
 
-This is intended to make the patching process predictable and prevent the patcher from silently producing an incorrect result.
+<img width="1920" height="1080" alt="2026-10-15_12 58 27" src="https://github.com/user-attachments/assets/e897d46a-4f64-461b-b1f5-1d04a25f00df" />
+
+## Ray Traced player shadows
+
+<img width="1521" height="856" alt="2026-10-09_19 38 40" src="https://github.com/user-attachments/assets/68c263cf-8486-41f2-ab5c-1aa71d353ce8" />
 
 ---
 
