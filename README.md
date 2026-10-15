@@ -53,8 +53,8 @@ You can choose from two installation methods:
 2. Download the **SEUS PTGI HRR 2.1 Reforged** from this [repository](https://github.com/ThomasDeStrooper/SEUS_PTGI_HRR_REFORGED/releases?utm).
 3. Download the original **SEUS PTGI HRR 2.1** from [Patreon](https://www.patreon.com/file?h=45141775&m=88959035), **Bliss v2.1.2** from [Modrinth](https://cdn.modrinth.com/data/ZvMtQlho/versions/kC2Y8q1P/Bliss_v2.1.2_%28Chocapic13_Shaders_edit%29.zip?mr_download_reason=standalone) and **Photon v1.3b** from [Modrinth](https://cdn.modrinth.com/data/lLqFfGNs/versions/gUv7fBPN/photon_v1.3b.zip?mr_download_reason=standalone).
 4. Extract the **SEUS PTGI HRR 2.1 Reforged** ZIP.
-5. Simply **drag and drop both the original SEUS PTGI HRR 2.1 ZIP and the Photon v1.3b ZIP onto `Apply Patch.bat`**.
-6. The patcher will automatically detect the two shader ZIPs and generate your final **SEUS PTGI HRR 2.1 Reforged** shader pack.
+5. Simply **drag and drop both the original SEUS PTGI HRR 2.1 ZIP, Bliss and the Photon v1.3b ZIP onto `Apply Patch.bat`**.
+6. The patcher will automatically detect the three shader ZIPs and generate your final **SEUS PTGI HRR 2.1 Reforged** shader pack.
 7. The patcher will then ask whether you want to automatically install the generated shader into your shaderpacks folder. Enter **Y** for Yes or **N** for No. You can also simply **press Enter** to use the default option and automatically add the generated shader to your shaderpacks folder.
 
 ## Installation 2 — Automatic File Search
