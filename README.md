@@ -25,8 +25,6 @@ Leave a star if you like the project! ⭐️
 
 <h5 align="center"><mark>For the latest stable build, visit the <a href="https://www.patreon.com/ThomasDeStrooper/posts/seus-ptgi-hrr-2-172063951">Latest Stable Build</a></mark></h5>
 
-# The shader is currently not working properly in either the End or the Nether! A fix will follow soon.
-
 # About
 
 SEUS PTGI HRR 2.1 Reforged is a community made edit of **Sonic Ether's SEUS PTGI HRR 2.1**, focused on improving image quality and performance, adding more configuration options, fixing visual issues, Distant Horizon support and bringing in selected features from **Photon** alongside original features developed specifically for Reforged.
