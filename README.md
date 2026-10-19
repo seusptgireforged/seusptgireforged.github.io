@@ -1,21 +1,27 @@
-</a>
-</p>
 <h1 align="center"><b>SEUS PTGI HRR 2.1 Reforged</b></h1>
+
 <p align="center">
-<img src="https://github.com/user-attachments/assets/88f9fff8-aa75-426b-9468-1397dcce96a1" alt="preview" width="100%"/>
+  <img src="https://github.com/user-attachments/assets/88f9fff8-aa75-426b-9468-1397dcce96a1" alt="preview" width="100%"/>
 </p>
+
 <p align="center">
   <a href="https://github.com/ThomasDeStrooper/SEUS_PTGI_HRR_REFORGED/releases">Latest release</a> |
-  <a href="https://github.com/ThomasDeStrooper/SEUS_PTGI_HRR_REFORGED/blob/main/LICENCE.txt">License</a>
+  <a href="https://github.com/ThomasDeStrooper/SEUS_PTGI_HRR_REFORGED/blob/main/LICENCE.txt">License</a> |
+  <a href="https://modrinth.com/shader/seus-ptgi-hrr-reforged">Modrinth</a>
 </p>
+
 <div align="center">
   <a href="https://github.com/ThomasDeStrooper/SEUS_PTGI_HRR_REFORGED/releases">
-    <img src="https://img.shields.io/github/v/release/ThomasDeStrooper/SEUS_PTGI_HRR_REFORGED?style=flat-square&color=blue" alt="" />
+    <img src="https://img.shields.io/github/v/release/ThomasDeStrooper/SEUS_PTGI_HRR_REFORGED?style=flat-square&color=blue" alt="Latest Release" />
   </a>
   <a href="https://github.com/ThomasDeStrooper/SEUS_PTGI_HRR_REFORGED/releases">
-    <img src="https://img.shields.io/github/downloads/ThomasDeStrooper/SEUS_PTGI_HRR_REFORGED/total?style=flat-square&color=blue" alt="" />
+    <img src="https://img.shields.io/github/downloads/ThomasDeStrooper/SEUS_PTGI_HRR_REFORGED/total?style=flat-square&color=blue" alt="Total Downloads" />
+  </a>
+  <a href="https://modrinth.com/shader/seus-ptgi-hrr-reforged">
+    <img src="https://img.shields.io/static/v1?label=Modrinth&message=View%20Project&style=flat-square&logo=modrinth&logoColor=white&color=1bd96a" alt="Modrinth" />
+  </a>
   <a href="https://github.com/sponsors/seusptgireforged">
-    <img src="https://img.shields.io/static/v1?label=Sponsor&style=flat-square&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86" alt="" />
+    <img src="https://img.shields.io/static/v1?label=Sponsor&style=flat-square&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86" alt="Sponsor" />
   </a>
 </div>
 
