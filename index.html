@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEUS PTGI HRR 2.1 Reforged — Next-Gen Minecraft Shaders</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            bg: '#090a0f',
+                            card: 'rgba(16, 20, 31, 0.55)',
+                            cardHover: 'rgba(23, 30, 48, 0.75)',
+                            border: 'rgba(255, 255, 255, 0.08)',
+                            borderLight: 'rgba(255, 255, 255, 0.15)',
+                            textMuted: '#94a3b8',
+                            textSecondary: '#cbd5e1',
+                            accentBlue: '#3b82f6',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow-soft': '0 0 60px -15px rgba(59, 130, 246, 0.12)',
+                        'card': '0 20px 40px -15px rgba(0, 0, 0, 0.6)',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            background-color: #08090d;
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .ambient-radial-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 50% 18%, rgba(37, 99, 235, 0.12) 0%, rgba(15, 23, 42, 0.06) 45%, transparent 70%),
+                radial-gradient(circle at 85% 60%, rgba(30, 58, 138, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 15% 80%, rgba(30, 58, 138, 0.06) 0%, transparent 50%);
+        }
+
+        .glass-card {
+            background: rgba(14, 18, 28, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+        }
+
+        .glass-card-hover {
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card-hover:hover {
+            border-color: rgba(96, 165, 250, 0.25);
+            transform: translateY(-3px);
+            background: rgba(20, 26, 42, 0.7);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), 0 0 30px -12px rgba(59, 130, 246, 0.15);
+        }
+
+        .glass-pill {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .feature-icon-box {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: rgba(59, 130, 246, 0.12);
+            border: 1px solid rgba(96, 165, 250, 0.18);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #60a5fa;
+            font-size: 14px;
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-100 { transition-delay: 0.1s; }
+        .delay-200 { transition-delay: 0.2s; }
+        .delay-300 { transition-delay: 0.3s; }
+        .delay-400 { transition-delay: 0.4s; }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #08090d;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-blue-500 selection:text-white">
+
+    <div class="ambient-radial-bg"></div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 w-full border-b border-white/[0.07] bg-[#08090d]/80 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="https://raw.githubusercontent.com/seusptgireforged/seusptgireforged.github.io/main/seusptgihrrreforged.png" alt="REFORGED Logo" class="w-8 h-8 rounded-lg shadow-md group-hover:scale-105 transition-transform" />
+                <span class="font-bold text-lg tracking-wider text-white group-hover:text-blue-400 transition-colors">REFORGED</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm text-dark-textMuted font-medium">
+                <a href="#home" class="hover:text-white transition-colors">Home</a>
+                <a href="#features" class="hover:text-white transition-colors">Features</a>
+                <a href="#installation" class="hover:text-white transition-colors">Installation</a>
+                <a href="#requirements" class="hover:text-white transition-colors">Requirements</a>
+                <a href="#license" class="hover:text-white transition-colors">License</a>
+                <a href="#credits" class="hover:text-white transition-colors">Credits</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="https://github.com/ThomasDeStrooper/SEUS_PTGI_HRR_REFORGED" target="_blank" class="hidden sm:inline-flex text-sm text-dark-textMuted hover:text-white transition-colors font-medium px-3 py-2">
+                    GitHub
+                </a>
+                <a href="https://github.com/seusptgireforged/seusptgireforged.github.io/releases" target="_blank" rel="noopener" 
+                   class="bg-white text-black hover:bg-slate-200 transition-all text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-full flex items-center gap-2 shadow-lg shadow-black/20 active:scale-95">
+                    <span>Latest Release</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-1">
+        <!-- Hero Section -->
+        <section id="home" class="relative pt-16 pb-20 md:pt-24 md:pb-32 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                
+                <div class="inline-flex items-center reveal-on-scroll">
+                    <a href="https://github.com/ThomasDeStrooper/SEUS_PTGI_HRR_REFORGED/releases" target="_blank" class="glass-pill px-4 py-1.5 rounded-full text-xs sm:text-sm text-dark-textSecondary hover:text-white hover:border-blue-400/30 transition-all flex items-center gap-2 mb-8">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>A community-made shader edit</span>
+                        <i class="fa-solid fa-chevron-right text-[10px] text-dark-textMuted"></i>
+                    </a>
+                </div>
+
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight leading-[1.1] max-w-4xl mx-auto reveal-on-scroll delay-100">
+                    SEUS PTGI HRR 2.1 Reforged
+                </h1>
+
+                <p class="mt-6 text-lg sm:text-xl text-dark-textMuted max-w-2xl mx-auto font-normal leading-relaxed reveal-on-scroll delay-200">
+                    Refined lighting. Richer reflections. More control. Built on the original SEUS PTGI HRR 2.1, enhanced with selected Photon features and improvements made specifically for Reforged.
+                </p>
+
+                <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 reveal-on-scroll delay-300">
+                    <a href="https://www.patreon.com/c/ThomasDeStrooper" target="_blank" 
+                       class="w-full sm:w-auto glass-pill text-white font-semibold px-8 py-3.5 rounded-full text-base hover:bg-white/10 hover:border-blue-400/30 transition-all flex items-center justify-center gap-2 border border-white/10 active:scale-95">
+                        <span>Latest Stable Build</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                    <a href="https://github.com/ThomasDeStrooper/SEUS_PTGI_HRR_REFORGED/releases" target="_blank" 
+                       class="w-full sm:w-auto bg-white text-black font-semibold px-8 py-3.5 rounded-full text-base hover:bg-slate-100 transition-all flex items-center justify-center gap-2 shadow-xl shadow-blue-950/20 active:scale-95">
+                        <span>Get Latest Release</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                    <a href="#installation" 
+                       class="w-full sm:w-auto glass-pill text-white font-medium px-8 py-3.5 rounded-full text-base hover:bg-white/10 transition-all flex items-center justify-center gap-2 border border-white/10">
+                        <i class="fa-solid fa-book-open text-xs text-dark-textMuted"></i>
+                        <span>Installation Guide</span>
+                    </a>
+                    <a href="https://modrinth.com/shader/seus-ptgi-hrr-reforged" target="_blank" rel="noopener noreferrer"
+                       class="w-full sm:w-auto bg-[#1bd96a] text-[#07130b] font-semibold px-8 py-3.5 rounded-full text-base hover:bg-[#35e77c] transition-all flex items-center justify-center gap-2 shadow-xl shadow-emerald-950/30 active:scale-95">
+                        <i class="fa-solid fa-cube text-sm"></i>
+                        <span>View on Modrinth</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </a>
+                </div>
+
+                <div class="mt-16 max-w-5xl mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/60 reveal-on-scroll delay-400">
+                    <img src="https://github.com/user-attachments/assets/88f9fff8-aa75-426b-9468-1397dcce96a1" alt="SEUS PTGI HRR 2.1 Reforged Preview" class="w-full h-auto block" />
+                </div>
+
+                <div class="mt-12 flex items-center justify-center gap-6 text-xs text-dark-textMuted flex-wrap reveal-on-scroll">
+                    <span><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> OptiFine &amp; Iris</span>
+                    <span><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> Physics Mod support</span>
+                    <span><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> Customizable shader menu</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-24 relative border-t border-white/[0.07]">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
+                    <div class="inline-flex items-center gap-2 glass-pill px-3.5 py-1.5 rounded-full text-xs font-semibold text-blue-400 mb-6">
+                        <i class="fa-solid fa-sparkles"></i>
+                        <span>New &amp; Key Features</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                        The SEUS atmosphere, refined.
+                    </h2>
+                    <p class="mt-4 text-dark-textMuted text-base sm:text-lg">
+                        Reforged keeps the original shader as its foundation while bringing next-generation visual upgrades and performance controls.
+                    </p>
+                </div>
+
+                <!-- Showcase Feature 1: Improved SSR -->
+                <div class="glass-card glass-card-hover p-8 md:p-10 mb-8 reveal-on-scroll">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-5 space-y-4">
+                            <div class="inline-flex items-center gap-2 glass-pill px-3 py-1 rounded-full text-xs text-blue-400 font-mono">
+                                <i class="fa-solid fa-water"></i>
+                                <span>Water &amp; Surfaces</span>
+                            </div>
+                            <h3 class="text-2xl sm:text-3xl font-bold text-white">Improved screen space reflections</h3>
+                            <p class="text-dark-textMuted text-sm sm:text-base leading-relaxed">
+                                Significantly upgraded screen space reflections designed to make water surfaces and wet blocks look remarkably clear, realistic, and lively.
+                            </p>
+                        </div>
+                        <div class="lg:col-span-7 rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
+                            <img width="1920" height="1080" alt="Improved screen space reflections" src="https://github.com/user-attachments/assets/7ffcd740-cb6f-4234-a460-aad1fdda4f78" class="w-full h-auto block group-hover:scale-105 transition-transform duration-700 ease-out" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Showcase Feature 2: Native emission -->
+                <div class="glass-card glass-card-hover p-8 md:p-10 mb-8 reveal-on-scroll delay-100">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-7 lg:order-1 order-2 rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
+                            <img width="1920" height="1080" alt="Native emission support for Glow Berries, Glow Lichen, Amethyst Buds and more" src="https://github.com/user-attachments/assets/e897d46a-4f64-461b-b1f5-1d04a25f00df" class="w-full h-auto block group-hover:scale-105 transition-transform duration-700 ease-out" />
+                        </div>
+                        <div class="lg:col-span-5 lg:order-2 order-1 space-y-4">
+                            <div class="inline-flex items-center gap-2 glass-pill px-3 py-1 rounded-full text-xs text-emerald-400 font-mono">
+                                <i class="fa-solid fa-lightbulb"></i>
+                                <span>Ray Traced Lighting</span>
+                            </div>
+                            <h3 class="text-2xl sm:text-3xl font-bold text-white">Native emission support for Glow Berries, Glow Lichen, Amethyst Buds and more</h3>
+                            <p class="text-dark-textMuted text-sm sm:text-base leading-relaxed">
+                                Full ray-traced lighting support built natively into blocks like Glow Berries, Lichen, and Amethyst Buds so they naturally cast real, glowing light onto nearby walls and floors.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Showcase Feature 3: Ray Traced player shadows -->
+                <div class="glass-card glass-card-hover p-8 md:p-10 mb-12 reveal-on-scroll delay-200">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-5 space-y-4">
+                            <div class="inline-flex items-center gap-2 glass-pill px-3 py-1 rounded-full text-xs text-amber-400 font-mono">
+                                <i class="fa-solid fa-user-shield"></i>
+                                <span>Dynamic Shadows</span>
+                            </div>
+                            <h3 class="text-2xl sm:text-3xl font-bold text-white">Ray Traced player shadows</h3>
+                            <p class="text-dark-textMuted text-sm sm:text-base leading-relaxed">
+                                Experience authentic, path-traced player shadows that dynamically cast across the environment whenever you stand in front of any light source.
+                            </p>
+                        </div>
+                        <div class="lg:col-span-7 rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
+                            <img width="1521" height="856" alt="Ray Traced player shadows" src="https://github.com/user-attachments/assets/68c263cf-8486-41f2-ab5c-1aa71d353ce8" class="w-full h-auto block group-hover:scale-105 transition-transform duration-700 ease-out" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secondary Features Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+                    <div class="glass-card glass-card-hover p-8 flex flex-col justify-between reveal-on-scroll">
+                        <div>
+                            <div class="feature-icon-box mb-6">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Enhanced Visuals</h3>
+                            <p class="mt-2 text-sm text-dark-textMuted leading-relaxed">
+                                Refined reflections, lighting, clouds, and atmospheric effects for a richer in-game image.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card glass-card-hover p-8 flex flex-col justify-between reveal-on-scroll delay-100">
+                        <div>
+                            <div class="feature-icon-box mb-6">
+                                <i class="fa-solid fa-sliders"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">More Control</h3>
+                            <p class="mt-2 text-sm text-dark-textMuted leading-relaxed">
+                                Additional shader-menu options let you tailor visual effects to your own preferences.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card glass-card-hover p-8 flex flex-col justify-between reveal-on-scroll delay-200">
+                        <div>
+                            <div class="feature-icon-box mb-6">
+                                <i class="fa-solid fa-gauge-high"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Performance Focus</h3>
+                            <p class="mt-2 text-sm text-dark-textMuted leading-relaxed">
+                                Targeted optimizations and adjustable settings help balance image quality with frame rate.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card glass-card-hover p-8 flex flex-col justify-between reveal-on-scroll">
+                        <div>
+                            <div class="feature-icon-box mb-6">
+                                <i class="fa-solid fa-cloud-sun"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Cloud Choices</h3>
+                            <p class="mt-2 text-sm text-dark-textMuted leading-relaxed">
+                                Switch between the Reforged cloud mode and Photon Clouds directly in the shader menu.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card glass-card-hover p-8 flex flex-col justify-between reveal-on-scroll delay-100">
+                        <div>
+                            <div class="feature-icon-box mb-6">
+                                <i class="fa-solid fa-layer-group"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Selected Photon Features</h3>
+                            <p class="mt-2 text-sm text-dark-textMuted leading-relaxed">
+                                Carefully integrated Photon features sit alongside changes developed specifically for Reforged.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card glass-card-hover p-8 flex flex-col justify-between reveal-on-scroll delay-200">
+                        <div>
+                            <div class="feature-icon-box mb-6">
+                                <i class="fa-solid fa-cubes"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Physics Mod Support</h3>
+                            <p class="mt-2 text-sm text-dark-textMuted leading-relaxed">
+                                Designed to work with the Physics Mod. Distant Horizons support is planned for a future update.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Installation Section -->
+        <section id="installation" class="py-20 border-t border-white/[0.07]">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="text-center mb-16 reveal-on-scroll">
+                    <div class="text-blue-400 font-bold uppercase tracking-widest text-xs mb-3">Get started</div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Up and running in a few steps.</h2>
+                    <p class="mt-3 text-dark-textMuted text-sm sm:text-base max-w-xl mx-auto">Use the included patcher to build your Reforged shader pack from the required shader files. Original ZIPs are supplied by you, not redistributed here.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    <div class="lg:col-span-4 glass-card p-6 sm:p-8 space-y-6 reveal-on-scroll">
+                        <div>
+                            <h4 class="text-base font-bold text-white mb-2">Before you start</h4>
+                            <p class="text-xs leading-relaxed text-dark-textMuted">
+                                Install OptiFine HD U G5+ or Iris, then obtain the required shader files from their respective official sources.
+                            </p>
+                        </div>
+                        <a href="https://github.com/ThomasDeStrooper/SEUS_PTGI_HRR_REFORGED/releases" target="_blank" 
+                           class="w-full bg-white text-black font-semibold py-3 px-4 rounded-xl text-xs hover:bg-slate-200 transition-all flex items-center justify-center gap-2 shadow-sm">
+                            <span>Download Reforged</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+
+                    <div class="lg:col-span-8 glass-card p-6 sm:p-8 space-y-6 reveal-on-scroll delay-100">
+                        <div class="flex items-start gap-4 pb-6 border-b border-white/5">
+                            <div class="w-8 h-8 rounded-lg glass-pill flex items-center justify-center font-bold text-xs shrink-0 font-mono text-blue-400">01</div>
+                            <div>
+                                <h4 class="font-bold text-sm text-white">Download Reforged</h4>
+                                <p class="text-xs mt-1 text-dark-textMuted">Get the latest release from the <a href="https://github.com/ThomasDeStrooper/SEUS_PTGI_HRR_REFORGED/releases" class="text-blue-400 underline">GitHub Releases page</a> and extract the ZIP.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 pb-6 border-b border-white/5">
+                            <div class="w-8 h-8 rounded-lg glass-pill flex items-center justify-center font-bold text-xs shrink-0 font-mono text-blue-400">02</div>
+                            <div>
+                                <h4 class="font-bold text-sm text-white">Get the required shader files</h4>
+                                <p class="text-xs mt-1 text-dark-textMuted">
+                                    Download SEUS PTGI HRR 2.1, Bliss v2.1.2, and Photon v1.3b from their respective official sources.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 pb-6 border-b border-white/5">
+                            <div class="w-8 h-8 rounded-lg glass-pill flex items-center justify-center font-bold text-xs shrink-0 font-mono text-blue-400">03</div>
+                            <div>
+                                <h4 class="font-bold text-sm text-white">Run Apply Patch</h4>
+                                <p class="text-xs mt-1 text-dark-textMuted">For the simplest method, double-click <strong>Apply Patch.bat</strong>. You can also drag the original SEUS and Photon ZIP files onto it.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 pb-6 border-b border-white/5">
+                            <div class="w-8 h-8 rounded-lg glass-pill flex items-center justify-center font-bold text-xs shrink-0 font-mono text-blue-400">04</div>
+                            <div>
+                                <h4 class="font-bold text-sm text-white">Let the patcher do the work</h4>
+                                <p class="text-xs mt-1 text-dark-textMuted">The patcher searches for required files, verifies them, and generates your Reforged shader pack. Press <strong>Enter</strong> when prompted.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-lg glass-pill flex items-center justify-center font-bold text-xs shrink-0 font-mono text-blue-400">05</div>
+                            <div>
+                                <h4 class="font-bold text-sm text-white">Enable the shader in Minecraft</h4>
+                                <p class="text-xs mt-1 text-dark-textMuted">Place the generated ZIP in your shaderpacks folder if not installed automatically, then select it in settings.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Requirements & License Section -->
+        <section id="requirements" class="py-20 border-t border-white/[0.07] bg-blue-950/[0.03]">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- System Requirements Card -->
+                <div class="glass-card p-8 reveal-on-scroll">
+                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                        <i class="fa-solid fa-desktop text-blue-400 text-base"></i>
+                        <span>System Requirements</span>
+                    </h3>
+                    <div class="space-y-4 text-xs sm:text-sm">
+                        <div class="flex justify-between border-b border-white/5 pb-3">
+                            <span class="text-dark-textMuted">Minecraft Version</span>
+                            <span class="font-medium text-white">1.16.4 or newer</span>
+                        </div>
+                        <div class="flex justify-between border-b border-white/5 pb-3">
+                            <span class="text-dark-textMuted">Shader Loader</span>
+                            <span class="font-medium text-white">OptiFine G5+ / Iris</span>
+                        </div>
+                        <div class="flex justify-between border-b border-white/5 pb-3">
+                            <span class="text-dark-textMuted">Minimum GPU Guide</span>
+                            <span class="font-medium text-white">NVIDIA RTX 2050</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-dark-textMuted">Recommended GPU Guide</span>
+                            <span class="font-medium text-white">NVIDIA RTX 3060</span>
+                        </div>
+                    </div>
+                    <p class="text-xs mt-4 text-dark-textMuted">NVIDIA GPUs are currently the main tested hardware. Some visual issues or occasional crashes may occur on AMD; Intel GPU compatibility is not guaranteed.</p>
+                </div>
+
+                <!-- License & Terms Card -->
+                <div id="license" class="glass-card p-8 flex flex-col justify-between reveal-on-scroll delay-100">
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                            <i class="fa-solid fa-file-contract text-emerald-400 text-base"></i>
+                            <span>License & Usage Terms</span>
+                        </h3>
+
+                        <!-- Permitted Uses -->
+                        <div>
+                            <div class="flex items-center gap-2 border-b border-white/5 pb-2 mb-2.5">
+                                <div class="w-2 h-2 rounded-full bg-emerald-400"></div>
+                                <span class="text-xs font-bold tracking-wide uppercase text-white">Permitted Uses</span>
+                            </div>
+                            <ul class="space-y-1.5 text-xs text-dark-textMuted">
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-emerald-400 mt-0.5 shrink-0 text-[10px]"></i>
+                                    <span>Use the Patch to extract the SEUS PTGI REFORGED Shader.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-emerald-400 mt-0.5 shrink-0 text-[10px]"></i>
+                                    <span>Use the Shader for gameplay, content creation, and livestreaming.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-emerald-400 mt-0.5 shrink-0 text-[10px]"></i>
+                                    <span>Modify the Patch and/or Shader for your own personal use.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-emerald-400 mt-0.5 shrink-0 text-[10px]"></i>
+                                    <span>Redistribute an unedited copy of the Patch, provided that ThomasDeStrooper is clearly and appropriately credited.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-emerald-400 mt-0.5 shrink-0 text-[10px]"></i>
+                                    <span>Modify and redistribute the Shader, provided that it is distributed together with your own Patch and that your Patch does not violate the SEUS license.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-emerald-400 mt-0.5 shrink-0 text-[10px]"></i>
+                                    <span>Modify and directly redistribute the block.properties and language files.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Prohibited Uses -->
+                        <div class="pt-2 border-t border-white/5">
+                            <div class="flex items-center gap-2 border-b border-white/5 pb-2 mb-2.5">
+                                <div class="w-2 h-2 rounded-full bg-rose-500"></div>
+                                <span class="text-xs font-bold tracking-wide uppercase text-white">Prohibited Uses</span>
+                            </div>
+                            <ul class="space-y-1.5 text-xs text-dark-textMuted">
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-xmark text-rose-500 mt-0.5 shrink-0 text-[10px]"></i>
+                                    <span>Redistribute the Shader directly without also distributing the Patch, regardless of whether the Shader has been modified.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-xmark text-rose-500 mt-0.5 shrink-0 text-[10px]"></i>
+                                    <span>Redistribute a modified or edited version of the Patch.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-xmark text-rose-500 mt-0.5 shrink-0 text-[10px]"></i>
+                                    <span>Claim ownership or authorship of the Patch or Shader when you are not the original author.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-xmark text-rose-500 mt-0.5 shrink-0 text-[10px]"></i>
+                                    <span>Perform, authorize, or facilitate any other use that violates the SEUS license.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-3 rounded-xl bg-black/40 border border-white/5 text-[11px] text-dark-textSecondary font-mono leading-normal">
+                        Original SEUS trademarks belong to Sonic Ether. Reforged is an unofficial community project.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Credits Section -->
+        <section id="credits" class="py-24 text-center relative overflow-hidden">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="glass-card p-10 md:p-16 relative overflow-hidden reveal-on-scroll">
+                    <div class="absolute -top-24 -left-24 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="relative z-10">
+                        <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                            Credits &amp; Transparency
+                        </h2>
+                        <p class="mt-4 text-dark-textMuted text-base sm:text-lg max-w-xl mx-auto">
+                            Reforged is an unofficial, non-commercial community edit built on the work of developers below.
+                        </p>
+                        
+                        <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+                            <div class="bg-white/[0.03] border border-white/5 p-4 rounded-xl">
+                                <strong class="block text-sm mb-0.5 text-white">Sonic Ether</strong>
+                                <span class="text-xs text-dark-textMuted">Creator of original SEUS PTGI HRR 2.1</span>
+                            </div>
+                            <div class="bg-white/[0.03] border border-white/5 p-4 rounded-xl">
+                                <strong class="block text-sm mb-0.5 text-white">sixthsurge</strong>
+                                <span class="text-xs text-dark-textMuted">Creator of the original Photon shader</span>
+                            </div>
+                            <div class="bg-white/[0.03] border border-white/5 p-4 rounded-xl">
+                                <strong class="block text-sm mb-0.5 text-white">Xonk</strong>
+                                <span class="text-xs text-dark-textMuted">Creator of the original Bliss shader</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-12 border-t border-white/10 pt-8 flex flex-wrap items-center justify-between text-xs text-dark-textMuted gap-4">
+                            <span>© SEUS PTGI HRR 2.1 Reforged · Unofficial community project</span>
+                            <a href="https://github.com/ThomasDeStrooper/SEUS_PTGI_HRR_REFORGED" target="_blank" class="hover:text-white transition-colors">View GitHub Repository ↗</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/[0.07] py-8 text-xs text-dark-textMuted bg-[#08090d]">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <img src="https://raw.githubusercontent.com/seusptgireforged/seusptgireforged.github.io/main/seusptgihrrreforged.png" alt="REFORGED Logo" class="w-6 h-6 rounded" />
+                <span class="font-bold text-white tracking-wider">REFORGED</span>
+                <span>© 2026 <strong>Thomas De Strooper</strong>. All rights reserved.</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="#home" class="hover:text-white transition-colors">Top</a>
+                <a href="#features" class="hover:text-white transition-colors">Features</a>
+                <a href="#installation" class="hover:text-white transition-colors">Installation</a>
+                <a href="https://www.patreon.com/c/ThomasDeStrooper" target="_blank" class="hover:text-white transition-colors">Patreon</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Reveal Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -60px 0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const revealElements = document.querySelectorAll('.reveal-on-scroll');
+            revealElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
