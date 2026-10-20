@@ -50,7 +50,7 @@ SEUS PTGI HRR 2.1 remains the work of **Sonic Ether**. Photon remains the work o
 
 1. Install **OptiFine HD U G5+** or **Iris**.
 2. Download the **SEUS PTGI HRR 2.1 Reforged** from this [repository](https://github.com/ThomasDeStrooper/SEUS_PTGI_HRR_REFORGED/releases?utm).
-3. Download the original **SEUS PTGI HRR 2.1** from [Patreon](https://www.patreon.com/file?h=45141775&m=88959035), **Bliss v2.1.2** from [Modrinth](https://cdn.modrinth.com/data/ZvMtQlho/versions/kC2Y8q1P/Bliss_v2.1.2_%28Chocapic13_Shaders_edit%29.zip?mr_download_reason=standalone) and **Photon v1.3b** from [Modrinth](https://cdn.modrinth.com/data/lLqFfGNs/versions/gUv7fBPN/photon_v1.3b.zip?mr_download_reason=standalone).
+3. Download the original **SEUS PTGI HRR 2.1** from [Patreon](https://www.patreon.com/file?h=45141775&m=88959035).
 4. Extract the **SEUS PTGI HRR 2.1 Reforged** ZIP.
 5. Once you have downloaded the required shader files, you can **double-click `Apply Patch.bat`** or manually dragging the shaders onto it.
 6. The patcher will automatically search for the **SEUS PTGI HRR 2.1**, **Bliss** and **Photon v1.3b** shader ZIPs in common locations, such as your **Downloads folder and Desktop**.
