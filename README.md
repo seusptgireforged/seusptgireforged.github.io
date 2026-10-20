@@ -79,6 +79,10 @@ A comparison chart between the two shaders. Please note that these benchmarks we
 
 <img width="1521" height="856" alt="2026-10-09_19 38 40" src="https://github.com/user-attachments/assets/ac709b84-6335-478a-9f50-d2c25f6eacc6" />
 
+### Footprints
+
+<img width="1920" height="1080" alt="2026-10-20_20 49 52" src="https://github.com/user-attachments/assets/a856551b-bafb-4149-93c6-91473dae758d" />
+
 ---
 
 # Requirements
