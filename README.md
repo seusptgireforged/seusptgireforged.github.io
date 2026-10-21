@@ -31,7 +31,7 @@ Leave a star if you like the project! ⭐️
 
 # About
 
-SEUS PTGI HRR 2.1 Reforged is a community made edit of **Sonic Ether's SEUS PTGI HRR 2.1**, focused on improving image quality and performance, adding more configuration options, fixing visual issues, Distant Horizon support and bringing in selected features from **Photon** alongside original features developed specifically for Reforged.
+SEUS PTGI HRR 2.1 Reforged is a community made edit of **Sonic Ether's SEUS PTGI HRR 2.1**, focused on improving image quality and performance, adding more configuration options, fixing visual issues, Distant Horizon support and bringing in selected features from **Photon**, **Bliss** and **GFME** alongside original features developed specifically for Reforged.
 
 Reforged is built around the original SEUS PTGI HRR 2.1 shader. It is not a shader made from scratch. The original SEUS shader provides the foundation, with selected Photon features and my own features and improvements added on top of it. **The original SEUS and Photon shader files are not redistributed by the patcher. You provide the required files yourself, and the patcher only works with the copies on your system.**
 
@@ -43,6 +43,18 @@ Reforged is built around the original SEUS PTGI HRR 2.1 shader. It is not a shad
 This project is made for the Minecraft shader community and is not intended to generate profit.
 
 SEUS PTGI HRR 2.1 remains the work of **Sonic Ether**. Photon remains the work of its respective developers.
+
+### Shader Credits
+
+This shader is built on and inspired by the work of several amazing shader projects:
+
+- **[SEUS PTGI HRR Test 2.1](https://www.patreon.com/file?h=45141775&m=88959035)** — The base of the shader.
+- **[Bliss Shaders](https://www.curseforge.com/minecraft/shaders/bliss-shader)** — Used for the clouds.
+- **[Photon](https://github.com/sixthsurge/photon)** — Used for the clouds, stars, and wind animations.
+- **[GFME](https://github.com/GeForceLegend/SEUS_PTGI_GFME)** — Used for bug fixes and improved ray tracing features.
+- **My Own Improvements** — Custom features, enhancements, optimizations, and visual refinements that make this shader unique.
+
+A huge thanks to the original creators of these projects for their work and contributions to the Minecraft shader community!
 
 ---
 
@@ -128,30 +140,3 @@ A possible workaround is to start Minecraft, or enable shaders, while the game i
 Intel GPU compatibility is currently not guaranteed.
 
 ---
-
-# Credits
-
-### Sonic Ether
-
-The original **SEUS PTGI HRR 2.1** shader and its underlying work were created by **Sonic Ether**.
-
-### Photon
-
-The original **Photon** shader and its underlying work were created by **sixthsurge**.
-
-### Bliss
-
-The original **Bliss** shader and its underlying work were created by **Xonk**.
-
----
-
-> [!IMPORTANT]
-> **Disclaimer: SEUS PTGI HRR 2.1 Reforged is an unofficial community edit.**
->
-> It is not affiliated with, sponsored by, or endorsed by Sonic Ether.
->
-> The original SEUS PTGI HRR 2.1 shader is required to build Reforged. Please obtain it through its official distribution.
->
-> Photon & Bliss is also distributed separately and remains the property of its respective developers.
->
-> This project does not redistribute the original SEUS PTGI HRR 2.1 and Photon shaders.
