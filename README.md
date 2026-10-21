@@ -83,6 +83,10 @@ A comparison chart between the two shaders. Please note that these benchmarks we
 
 <img width="1920" height="1080" alt="2026-10-20_20 49 52" src="https://github.com/user-attachments/assets/a856551b-bafb-4149-93c6-91473dae758d" />
 
+### Added glow and global illumination (GI) lighting to Nether Portals and mobs; Glow Squid, blaze and more
+
+<img width="1920" height="1080" alt="2026-10-21_14 34 22" src="https://github.com/user-attachments/assets/f9b3f519-3ee4-496e-b922-36a8c7320f0f" />
+
 ---
 
 # Requirements
