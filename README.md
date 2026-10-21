@@ -42,8 +42,6 @@ Reforged is built around the original SEUS PTGI HRR 2.1 shader. It is not a shad
 
 This project is made for the Minecraft shader community and is not intended to generate profit.
 
-SEUS PTGI HRR 2.1 remains the work of **Sonic Ether**. Photon remains the work of its respective developers.
-
 ### Shader Credits
 
 This shader is built on and inspired by the work of several amazing shader projects:
@@ -55,6 +53,10 @@ This shader is built on and inspired by the work of several amazing shader proje
 - **My Own Improvements** — Custom features, enhancements, optimizations, and visual refinements that make this shader unique.
 
 A huge thanks to the original creators of these projects for their work and contributions to the Minecraft shader community!
+
+### AI Usage Disclaimer
+
+The shader code itself is **not written by AI**. All code modifications and shader implementations are done manually. AI is only used to help write explanations of what the code does and to translate the shader menu options into different languages.
 
 ---
 
