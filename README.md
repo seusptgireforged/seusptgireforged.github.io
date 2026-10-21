@@ -46,10 +46,11 @@ This project is made for the Minecraft shader community and is not intended to g
 
 This shader is built on and inspired by the work of several amazing shader projects:
 
-- **[SEUS PTGI HRR Test 2.1](https://www.patreon.com/file?h=45141775&m=88959035)** — The base of the shader.
+- **[SEUS PTGI HRR Test 2.1](https://www.patreon.com/sonicether/posts/download-seus-2-45141775)** — The base of the shader.
 - **[Bliss Shaders](https://www.curseforge.com/minecraft/shaders/bliss-shader)** — Used for the clouds.
 - **[Photon](https://github.com/sixthsurge/photon)** — Used for the clouds, stars, and wind animations.
 - **[GFME](https://github.com/GeForceLegend/SEUS_PTGI_GFME)** — Used for bug fixes and improved ray tracing features.
+- **[Lumenite](https://modrinth.com/shader/lumenite-shaders)** - used for the water ripples and the footprints.
 - **My Own Improvements** — Custom features, enhancements, optimizations, and visual refinements that make this shader unique.
 
 A huge thanks to the original creators of these projects for their work and contributions to the Minecraft shader community!
