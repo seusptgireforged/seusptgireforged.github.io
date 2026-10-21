@@ -56,7 +56,7 @@ A huge thanks to the original creators of these projects for their work and cont
 
 ### AI Usage Disclaimer
 
-The shader code itself is **not written by AI**. All code modifications and shader implementations are done manually. AI is only used to help write explanations of what the code does and to translate the shader menu options into different languages.
+The shader code itself is **not written by AI**. All code modifications and shader implementations are done manually. The shader code itself is **not written by AI**. All code modifications and shader implementations are done manually. AI is only used to help write explanations of what the code does, and to translate the shader's menu options, since my English isn't very good.
 
 ---
 
