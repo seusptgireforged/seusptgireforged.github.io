@@ -115,7 +115,7 @@ A comparison chart between the two shaders. Please note that these benchmarks we
 
 | Component       | Recommendation  |
 | --------------- | --------------- |
-| Minimum GPU     | NVIDIA RTX 2050 |
+| Minimum GPU     | NVIDIA GTX 1650 |
 | Recommended GPU | NVIDIA RTX 3060 |
 
 These are general recommendations rather than strict requirements. Actual performance depends on resolution, Minecraft settings, view distance, shader settings, and the rest of the system.
