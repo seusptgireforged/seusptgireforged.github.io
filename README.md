@@ -50,7 +50,6 @@ This shader is built on and inspired by the work of several amazing shader proje
 - **[Bliss Shaders](https://www.curseforge.com/minecraft/shaders/bliss-shader)** — Used for the clouds.
 - **[Photon](https://github.com/sixthsurge/photon)** — Used for the clouds, stars, and wind animations.
 - **[GFME](https://github.com/GeForceLegend/SEUS_PTGI_GFME)** — Used for bug fixes and improved ray tracing features.
-- **[Lumenite](https://modrinth.com/shader/lumenite-shaders)** - used for the water ripples and the footprints.
 - **My Own Improvements** — Custom features, enhancements, optimizations, and visual refinements that make this shader unique.
 
 A huge thanks to the original creators of these projects for their work and contributions to the Minecraft shader community!
