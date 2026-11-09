@@ -34,6 +34,16 @@ Reforged is built around the original SEUS PTGI HRR 2.1 shader. It is not a shad
 > [!NOTE]
 > SEUS PTGI HRR 2.1 Reforged is an unofficial community edit. It is not affiliated with or endorsed by Sonic Ether.
 
+# Installation
+
+1. **Install the required mod loader.** Install the correct version of **Forge, Fabric, or NeoForge**, depending on your Minecraft version and the version supported by the Reforged mod.
+2. **Download SEUS PTGI HRR 2.1 Reforged.** Download the mod from the [repository](https://github.com/ThomasDeStrooper/SEUS_PTGI_HRR_REFORGED/releases?utm).
+3. **Install the Reforged mod.** Double-click the downloaded `.jar` file to open the installer. Select the location where you want the mod to be installed. By default, you can select the Minecraft launcher's `mods` folder, where the mod should be installed automatically. Alternatively, you can simply drag and drop the downloaded `.jar` file directly into your Minecraft launcher's `mods` folder. Make sure you use the correct version for your mod loader and Minecraft installation.
+4. **Launch Minecraft.** Start the game using the correct Forge, Fabric, or NeoForge profile with the Reforged mod installed.
+5. **Open the Shader Packs menu.** Navigate to your shader settings and open the Shader Packs menu.
+6. **Download the required shader packs.** Download the original **SEUS PTGI HRR 2.1** from [Patreon](https://www.patreon.com/file?h=45141775&m=88959035).
+7. **Drag the shader ZIP files into the Shader Packs menu.** Drag the required shader ZIP files into the in-game Shader Packs menu. The Reforged mod will detect the shader and use them to generate your final shader pack.
+
 ## Non-Commercial Project
 
 This project is made for the Minecraft shader community and is not intended to generate profit.
@@ -53,18 +63,6 @@ A huge thanks to the original creators of these projects for their work and cont
 ### AI Usage Disclaimer
 
 The shader code itself is **not written by AI**. All code modifications and shader implementations are done manually. The shader code itself is **not written by AI**. All code modifications and shader implementations are done manually. AI is only used to help write explanations of what the code does, and to translate the shader's menu options, since my English isn't very good.
-
----
-
-# Installation
-
-1. **Install the required mod loader.** Install the correct version of **Forge, Fabric, or NeoForge**, depending on your Minecraft version and the version supported by the Reforged mod.
-2. **Download SEUS PTGI HRR 2.1 Reforged.** Download the mod from the [repository](https://github.com/ThomasDeStrooper/SEUS_PTGI_HRR_REFORGED/releases?utm).
-3. **Install the Reforged mod.** Double-click the downloaded `.jar` file to open the installer. Select the location where you want the mod to be installed. By default, you can select the Minecraft launcher's `mods` folder, where the mod should be installed automatically. Alternatively, you can simply drag and drop the downloaded `.jar` file directly into your Minecraft launcher's `mods` folder. Make sure you use the correct version for your mod loader and Minecraft installation.
-4. **Launch Minecraft.** Start the game using the correct Forge, Fabric, or NeoForge profile with the Reforged mod installed.
-5. **Open the Shader Packs menu.** Navigate to your shader settings and open the Shader Packs menu.
-6. **Download the required shader packs.** Download the original **SEUS PTGI HRR 2.1** from [Patreon](https://www.patreon.com/file?h=45141775&m=88959035).
-7. **Drag the shader ZIP files into the Shader Packs menu.** Drag the required shader ZIP files into the in-game Shader Packs menu. The Reforged mod will detect the shader and use them to generate your final shader pack.
 
 ---
 
