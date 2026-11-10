@@ -1,3 +1,4 @@
+
 <h1 align="center"><b>SEUS PTGI HRR 2.1 Reforged</b></h1>
 
 <p align="center">
@@ -7,6 +8,7 @@
 <p align="center">
   <a href="https://github.com/ThomasDeStrooper/SEUS_PTGI_HRR_REFORGED/releases">Latest release</a> |
   <a href="https://github.com/ThomasDeStrooper/SEUS_PTGI_HRR_REFORGED/blob/main/LICENCE.txt">License</a> |
+  <a href="https://github.com/seusptgireforged/seusptgireforged.github.io/blob/main/supported_mods">Supported Mods</a>
 </p>
 
 <div align="center">
