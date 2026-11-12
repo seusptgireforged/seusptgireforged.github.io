@@ -123,11 +123,7 @@ These are general recommendations rather than strict requirements. Actual perfor
 
 ## NVIDIA
 
-NVIDIA GPUs are currently the main tested hardware for Reforged.
-
-## AMD
-
-Some visual issues or occasional crashes may occur.
+NVIDIA and AMD GPUs are the main tested hardware for Reforged. Some visual issues or occasional crashes may occur when using AMD GPUs.
 
 A possible workaround is to start Minecraft, or enable shaders, while the game is in a small window before switching back to fullscreen.
 
